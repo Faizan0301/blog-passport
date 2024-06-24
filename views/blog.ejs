@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- fontawsom -->
+    <link rel="stylesheet" href="asset/css/all.min.css">
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="asset/css/bootstrap-icons.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="asset/css/style.css">
+</head>
+<body data-bs-theme="dark" class="bg-black">
+    <%- include('partial/header.ejs') %>
+    
+    <!-- blog -->
+    <section class="blog py-5">
+        <div class="container">
+            <h1 class="text-center mb-5 text-info-emphasis">ANIMAL BLOG</h1>
+            <div class="row justify-content-center">
+
+                <% data.map((val)=>{const {title,image,date,discription,_id}=val %>
+                <div class="col-md-6 mb-4">
+                    <div class="card border-0">
+                        <div class="overflow-hidden rounded-2 ratio ratio-1x1">
+                            <img src="<%= image %>" class="card-img-top object-fit-cover" alt="blog-img">
+                        </div>
+                        <div class="card-body px-4">
+                            <div class="bloger-name">
+                                <h3 class="text-primary fs-1"><%= title %></h3>
+                            </div>
+                            <div class="blog-review" >
+                                <p class="pb-1 fs-4 fst-italic text-secondary-emphasis" style="height:80px; overflow: hidden;text-overflow: ellipsis;">
+                                    <%= discription %>
+                                </p>
+                                <h6 class="text-secondary-emphasis pb-2">Date:- <span class="text-secondary fst-italic"><%= date %></span></h6>
+                            </div>
+                            <div class="card-btn">
+                                <a href="#" class="btn btn-primary d-block">Follow</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- JQuery -->
+    <script src="asset/js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="asset/js/bootstrap.bundle.min.js"></script>
+    <!-- main js -->
+    <script src="asset/js/main.js"></script>
+</body>
+</html>
